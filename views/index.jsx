@@ -1,18 +1,25 @@
-// <!DOCTYPE html>
-// <html lang="en">
-// <head>
-//     <meta charset="UTF-8" />
-//     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-//     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-//     <title>Document</title>
-    
-    
-// </head>
+const React = require('react')
 
+    class Index extends React.Component {
+      render() {
+          const { pokemon } = this.props
+          return (
+                  <div>
+                      <h1>This is Pokemon</h1>
+                      <ul>
+                          {pokemon.map((pokemon, i) => {
+                              return (
+                                  <li>
+                                      <a href={`/pokemon/${i}`}>
+                                        {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
+                                      </a>
+                                  </li>
+                              )
+                          })}
+                      </ul>
 
-// <body>
-    
-//     <h1>See All The Pokemon!</h1>
-    
-// </body>
-// </html>
+                  </div>
+          )
+      }
+    }
+    module.exports = Index
