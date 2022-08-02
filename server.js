@@ -10,9 +10,8 @@ const app = express()
 // app.set('view engine', 'jsx')
 //   app.engine('jsx', require('express-react-views').createEngine())
 
-//   const pokemon = require('./model/pokemon.js')
 
-
+  const pokemon = require('./model/pokemon.js')
 
 app.get('/', (req, res) => {
 
@@ -26,7 +25,7 @@ app.get('/pokemon', (req, res) => {
 
 
     //link to pokemons
-    console.log(req.params.question)
+    res.send(pokemon)
 //res.send(item)
 
 })
