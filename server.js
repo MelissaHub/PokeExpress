@@ -1,48 +1,34 @@
-//stuck at set up your index view
-
-
 const express = require('express')
-
 require('dotenv').config()
-
 const pokemon = require('./model/pokemon.js')
-
 const port = process.env.PORT || 3003 // if 3000 missing or not set
-//enviormental var
 const app = express()
-
-
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
 
 
 
+//most specific first
+app.get('/pokemon/:id', function(req, res){
 
-app.get('/', (req, res) => {
-    //link to pokemons
-    res.send('Welcome to the Pokemon App!')
-//res.send(item)
+    res.render('Show', {pokemon: pokemon[req.params.id]})
+    //calling it like an array
+    // res.send(req.params.id)
+
 })
 
 app.get('/pokemon', (req, res) => {
 
-        res.render('Index', {pokemon: pokemon})
+    res.render('Index', {pokemon: pokemon})
+//link to pokemons
+
+})
+
+app.get('/', (req, res) => {
     //link to pokemons
-    // res.send(pokemon)
-//res.send(item)
+    res.send('Welcome to the Pokemon App!')
+})
 
-    })
-
-
-    app.get('/pokemon/:id', function(req, res){
-
-        res.render('Show', {pokemon: pokemon[req.params.id]})
-        //calling it like an array
-        // res.send(req.params.id)
-
-    })
-    
- 
 
 //our port
 app.listen(port,() => {
