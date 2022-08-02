@@ -12,8 +12,9 @@ app.engine('jsx', require('express-react-views').createEngine())
 app.get('/pokemon/:id', function(req, res){
 
     res.render('Show', {pokemon: pokemon[req.params.id]})
-    //calling it like an array
-    // res.send(req.params.id)
+    // assigning /pokemon and index in the pokemon array
+    //calling Show.jsx
+    //render prints them
 
 })
 
