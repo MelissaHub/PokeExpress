@@ -32,6 +32,13 @@ app.get('/pokemon', (req, res) => {
 //res.send(item)
 
     })
+
+
+    app.get('/pokemon/:id', function(req, res) {
+
+        res.send(req.params.id)
+        
+    })
     
  
 
