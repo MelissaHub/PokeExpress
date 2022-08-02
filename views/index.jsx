@@ -1,33 +1,15 @@
-const React = require('react')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    
+</head>
 
-    class Index extends React.Component {
-      render() {
-          const { fruits } = this.props
-          return (
-                  <div>
-                      <h1>Fruits Index Page</h1>
-                      <ul>
-                          {fruits.map((fruit, i) => {
-                              return (
-                                  <li>
-                                      The{' '}
-                                      <a href={`/fruits/${i}`}>
-                                          {fruit.name}
-                                      </a>{' '}
-                                      is {fruit.color} <br></br>
-                                      {fruit.readyToEat
-                                          ? `It is ready to eat`
-                                          : `It is not ready to eat`}
-                                      <br />
-                                  </li>
-                              );
-                          })}
-                      </ul>
-                              <nav>
-                              <a href="/fruits/new">Create a New Fruit</a>
-                              </nav>
-                  </div>
-          );
-      }
-    }
-    module.exports = Index
+<body>
+    <h1>See All The Pokemon!</h1>
+    
+</body>
+</html>

@@ -22,8 +22,9 @@ app.get('/', (req, res) => {
 
 })
 app.get('/pokemon', (req, res) => {
+    <h1>See All the Pokemon</h1>
 
-
+    
     //link to pokemons
     res.send(pokemon)
 //res.send(item)

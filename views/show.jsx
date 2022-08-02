@@ -18,4 +18,4 @@ class Show extends React.Component {
  }
  module.exports  = Show
 
- //how to link index to show
+ //how to link index to
