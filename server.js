@@ -34,10 +34,12 @@ app.get('/pokemon', (req, res) => {
     })
 
 
-    app.get('/pokemon/:id', function(req, res) {
+    app.get('/pokemon/:id', function(req, res){
 
-        res.send(req.params.id)
-        
+        res.render('Show', {pokemon: pokemon[req.params.id]})
+        //calling it like an array
+        // res.send(req.params.id)
+
     })
     
  
