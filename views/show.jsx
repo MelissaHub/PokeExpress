@@ -13,8 +13,9 @@ const myStyle = {
           return (
                   <div  style={myStyle}>
                       <h1>Gotta Catch 'Em All</h1>
-                      <h2>{pokemon.name}</h2>
+                      <h2>Here is Pokemon {pokemon.name}</h2>
                       <img src ={pokemon.img + '.jpg'}></img>
+                      <a href = "/pokemon/new">Create a Pokemon</a><br/>
                       <a href = "/pokemon">BACK</a>
 
                   </div>

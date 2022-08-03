@@ -21,7 +21,8 @@ const React = require('react')
                                   //above to add apital to each name in array
                               )
                           })}
-                      </ul>
+                      </ul><br/>
+                      <a href="/pokemon/new">Create a Pokemon</a>
 
                   </div>
           )
