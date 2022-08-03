@@ -6,14 +6,14 @@ const React = require('react')
           //this.props is whatever the stored value
           return (
                   <div>
-                      <h1>This is Pokemon</h1>
+                      <h1>This is a Pokemon</h1>
                       <ul>
                           {pokemon.map((pokemon, i) => {
                             //map is an array method and goes through each to do what you want to each
                               return (
                                 //for each make them a link
                                   <li>
-                                        <a href={`/pokemon/${i}`}>
+                                        <a href={`/pokemon/${pokemon.id}`}>
                                         {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
                                         </a>
 

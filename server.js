@@ -20,6 +20,9 @@ app.get('/pokemon', (req, res)=>{
 
 
     //what does this do?
+    //Pokemon is the mongoose
+    //.find is a method for an array to....
+    //pokemon:allPokemon anything typed is stored into this value pokemon
     Pokemon.find({},(error,allPokemon) =>{
         //error is parameter built in method
         res.render('Index',{pokemon:allPokemon})
@@ -31,11 +34,11 @@ app.get('/pokemon', (req, res)=>{
 })
 
 app.post('/pokemon/', (req, res)=>{
-    const newPokemon = req.body //req.body is array in jsx
-    //new body that is the req we want to store object
-    newPokemon['img']= `http://img.pokemondb.net/artwork/) ${req.body.name.toLowerCase()}`
+    // const newPokemon = req.body //req.body is array in jsx
+    // //new body that is the req we want to store object
+    // newPokemon['img']= `http://img.pokemondb.net/artwork/) ${req.body.name.toLowerCase()}`
 
-    Pokemon.create(req.body, (error,createdPokemon ) =>{
+    Pokemon.create(req.body, (error,createdPokemon) =>{
         res.redirect('/pokemon')
     } )
     //sends to make new
@@ -46,10 +49,19 @@ app.get('/pokemon/new', function (req,res){
     res.render('New')
 })
 
+
+
 //most specific first
 app.get('/pokemon/:id', function(req, res){
     //shows each indiviual pokemon
-    res.render('Show', {pokemon: pokemon[req.params.id]})
+    
+    Pokemon.findById(req.params.id,(error,foundPokemon) => {
+
+        res.render('Show', {
+            pokemon: foundPokemon
+        })
+    })
+    
     // assigning /pokemon and index in the pokemon array
     //calling Show.jsx
     //render prints them
