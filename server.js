@@ -10,7 +10,7 @@ mongoose.connection.once('open', ()=> {
     console.log('connected to mongo')
 })
 
-const Pokemon = require('./model/Pokemon.js')
+const Pokemon = require('./model/pokemon.js')
 
 app.use(express.urlencoded({extended:true})) //can make nested objects?
 
