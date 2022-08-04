@@ -15,8 +15,9 @@ const React = require('react')
                                   <li>
                                         <a href={`/pokemon/${pokemon.id}`}>
                                         {pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
-                                        </a>
-
+                                        </a><br/>
+                                        <form action={`/pokemon/${pokemon.id}?_method=DELETE`} method='POST'><button type="submit">Delete</button></form>
+                                        <a href={`/pokemon/${pokemon.id}/edit`}>Edit Pokemon </a>
                                   </li>
                                   //above to add apital to each name in array
                               )

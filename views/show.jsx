@@ -12,10 +12,10 @@ const myStyle = {
           //destructre it {pokemon}
           //this.props is whatever the stored value is
           return (
-                  <div  style={myStyle}>
+                  <div>
                       <h1>Gotta Catch 'Em All</h1>
                       <h2>Here is Pokemon {pokemon.name}</h2>
-                      <img src={`http://img.pokemondb.net/artwork/${pokemon.name.toLowerCase()}.jpg`}></img>
+                      <img src={`http://img.pokemondb.net/artwork/${pokemon.name.toLowerCase()}.jpg`}></img><br/>
 
                       <a href = "/pokemon/new">Create a Pokemon</a><br/>
                       <a href = "/pokemon">BACK</a>
